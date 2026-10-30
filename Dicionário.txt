@@ -1,0 +1,73 @@
+
+1. FONTE DOS DADOS
+
+Os preços históricos dos ativos utilizados neste estudo foram coletados nas seguintes plataformas:
+
+SHY (Títulos do Tesouro Americano de 1-3 anos ETF Ishares): https://br.tradingview.com/symbols/NASDAQ-SHY/
+
+SPX (S&P 500): https://br.investing.com/indices/us-spx-500
+
+XAU SPOT (OURO): https://www.investing.com/currencies/xau-usd-historical-data
+
+XAG SPOT (PRATA): https://www.investing.com/currencies/xag-usd-historical-data
+
+BTC (Bitcoin): https://coinmarketcap.com/currencies/bitcoin/historical-data/
+
+ETH (Ether): https://coinmarketcap.com/currencies/ethereum/historical-data/
+
+
+2. DICIONÁRIO
+
+2.1 DATAS:
+DATA_FS  -> datas da série contendo somente as datas de funcionamento do SPX entre 2019 e 2024
+DATA_FSR -> Datas da DATA_FS com base nos Retornos (Em outras palavras, sem o 1º dia, pois não há retorno)
+DATA_qSPX -> Datas organizadas a partir dos menores quantis dos retornos do SPX (<5% encontra-se com cor de destaque no excel)
+DATA_qSHY -> Datas organizadas a partir dos menores quantis dos retornos do SHY (<5% encontra-se com cor de destaque no excel)
+DATA_EV1 -> Datas correspondente ao estudo de eventos do Evento 1
+DATA_EV2 -> Datas correspondente ao estudo de eventos do Evento 2
+
+2.2 PREÇOS:
+P_SPX  -> Preço do SPX
+P_SHY  -> Preço do SHY
+P_BTC  -> Preço do Bitcoin
+P_ETH  -> Preço do Ether
+P_OURO -> Preço do Ouro
+P_PRATA-> Preço da Prata
+P_DXY  -> Preço do DXY
+
+2.3 RETORNOS:
+R_SPX  -> Retorno do SPX
+R_SHY  -> Retorno do SHY
+R_BTC  -> Retorno do Bitcoin
+R_ETH  -> Retorno do Ether
+R_OURO -> Retorno do Ouro
+R_PRATA-> Retorno da Prata
+R_DXY  -> Retorno do DXY
+RC_SPX -> Retorno do SPX * C_SPX
+RC_SHY -> Retorno do SHY * C_SHY
+R_(ATIVO)_ESPERADO_EV(EVENTO) -> Retorno esperado do Ativo em determinado Evento
+AR_(ATIVO)_(EVENTO) -> Retorno anormal do ativo em determinado Evento
+LAG(p)_ATIVO_(EVENTO) -> Defasagem p definida pelo AIC do ativo em determinado Evento
+
+2.4 DUMMY:
+C_SPX (q<5%) -> Retorna 1 para DATA_qSPX <5% e 0 para DATA_qSPX >5%
+C_SHY (q<5%) -> Retorna 1 para DATA_qSHY <5% e 0 para DATA_qSHY >5%
+
+3. SOBRE O RSTUDIO
+
+3.1 Script-SafeHavenAndHedge
+
+A única aba da planilha utilizada no software RStudio é a intitulada "BASER", presente no arquivo Base_SafeHaven_And_Hedge.
+
+Todos os resultados obtidos por meio do R encontram-se na aba "Resultados_R", presente no arquivo Base_SafeHaven_And_Hedge.
+
+Para os usuários que desejarem realizar a análise exclusivamente no R, o script disponibilizado está integralmente comentado.
+
+3.2 Script-EventStudy_Estimation_Autoregressive
+
+As abas utilizadas no Software Rstudio correspondem as páginas EV1 e EV2, presente no arquivo Base_Event_Study.
+
+Todos os resultados obtidos por meio do R encontram-se na aba "Resultados_R", presente no arquivo Base_Event_Study.
+
+Para os usuários que desejarem realizar a análise exclusivamente no R, o script disponibilizado está integralmente comentado.
+
